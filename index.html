@@ -10,11 +10,30 @@
 </head>
 
 <body>
+    <div id="app">
+        <v-app>
+            <v-container>
+                <v-card shaped>
+                    <v-card-text class="text-center text-primary text-h4">
+                        <v-container>Name</v-container>
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-btn>Click here</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-container>
+        </v-app>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
     <script>
-        // TODO:
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: {
+            }
+        })
     </script>
 </body>
 
