@@ -15,7 +15,7 @@ app.use(serve_static(__dirname + "/public"))
 
 app.get('/generate/name', function (req, res)
 {
-    var entier = utils.randomNumber(0, 99);
+    var entier = utils.randomNumber(0, (database.length-1));
     res.send(database[entier]["name"])
 })
 
