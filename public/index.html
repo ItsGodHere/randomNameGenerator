@@ -15,11 +15,11 @@
             <v-container>
                 <v-card shaped>
                     <v-card-text class="text-center text-primary text-h4">
-                        <div>Name</div>
+                        {{name}}
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn>
+                        <v-btn v-on:click.native="getName">
                             Click here
                         </v-btn>
                         <v-spacer></v-spacer>
@@ -31,11 +31,21 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         new Vue({
             el: '#app',
             vuetify: new Vuetify(),
             data: {
+                name: ''
+            },
+            methods: {
+                getName: function() {
+                    axios.get('generate/name').then(response => {
+                        this.name = response.data;
+                    });
+                    console.log(this.name);
+                }
             }
         })
     </script>
