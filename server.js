@@ -4,7 +4,7 @@ var http = require('http');
 var path = require('path');
 var fs = require('fs');
 
-console.log('Chargement de la base de donnée....')
+console.log('Chargement de la base de donnée...')
 let database = JSON.parse(fs.readFileSync('nameDataBase.json'));
 
 var app = express();
